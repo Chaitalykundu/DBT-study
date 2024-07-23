@@ -22,8 +22,8 @@
 dbt_project_name:
   outputs:
     dev:
-      account: picyzvx-jb01205
-      database: DEMO_DB
+      account: [code between https:// __ and ___.snowflakecomputing.com]
+      database: Database_name
       password: Snowflake_password
       role: ACCOUNTADMIN
       schema: PUBLIC
