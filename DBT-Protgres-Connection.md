@@ -43,5 +43,5 @@ postgres:
 
     > dbt debug
 
-12. Run DBT priject
+12. Run DBT project
     > dbt run

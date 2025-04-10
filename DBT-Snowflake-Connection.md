@@ -36,7 +36,7 @@ dbt_project_name:
 
 9. check all versions and configurations
 
-    > dbt debug
+   > dbt debug
 
-10. Run DBT priject
+10. Run DBT project
     > dbt run
