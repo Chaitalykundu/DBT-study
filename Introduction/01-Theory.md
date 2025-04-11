@@ -1,14 +1,28 @@
 # Overview
 
 - [Overview](#overview)
+- [Summary](#summary)
 - [Abbreviation](#abbreviation)
 - [DBT](#dbt)
 - [Why DBT](#why-dbt)
+- [Role of dbt in the Modern Data Stack](#role-of-dbt-in-the-modern-data-stack)
 - [What does dbt do?](#what-does-dbt-do)
 - [How does dbt work?](#how-does-dbt-work)
 - [Example Workflow](#example-workflow)
 
 &nbsp;
+
+&nbsp;
+
+&nbsp;
+
+# Summary
+
+- dbt = T in ELT ✅
+- Write SQL, structure projects like codebases
+- Supports modular pipelines, testing, and documentation
+- Works well with cloud data warehouses
+- Makes transformation scalable, repeatable, and collaborative
 
 &nbsp;
 
@@ -26,6 +40,8 @@
 # DBT
 
 DBT is the tool for **_transforming data_** within data warehouse.
+
+dbt (data build tool) is an **open-source** tool that helps data teams **transform raw data** inside a data warehouse into clean, analytics-ready datasets using SQL.
 
 It's a command line tool and transformation framework used by data engineers and analysts to transform data in a data warehouse using SQL and some basic Python (for dbt Python models or scripting).
 
@@ -58,6 +74,22 @@ The **extraction** of data from source and **loading** raw data into data wareho
    even if data volumes and complexity grow.
 
 6. <u>**_Easy Team Collaboration:_**</u> DBT allows large data team to collaborate easily by providing **integrated platform for coding, testing, documentation and development**
+
+&nbsp;
+
+&nbsp;
+
+# Role of dbt in the Modern Data Stack
+
+In a modern data stack, data generally flows like this:
+
+- **Data Ingestion** — Tools like Fivetran, Airbyte, or custom scripts load raw data into your warehouse.
+
+- **Data Storage** — Cloud data warehouses like Snowflake, BigQuery, Redshift, or Databricks store the raw data.
+
+- **Data Transformation** — This is where dbt comes in. It transforms raw data into clean, tested, documented datasets.
+
+- **BI / Analytics Layer** — Tools like Looker, Tableau, or Power BI use transformed data to generate dashboards and insights.
 
 &nbsp;
 

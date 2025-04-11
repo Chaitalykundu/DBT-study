@@ -5,6 +5,7 @@
   - [ETL](#etl)
   - [ELT](#elt)
 - [Difference between ELT and ETL](#difference-between-elt-and-etl)
+- [ETL vs ELT](#etl-vs-elt-1)
 
 &nbsp;
 
@@ -50,3 +51,17 @@ Subsequently data transformations are carried out within the data warehouse itse
 | The data transformed is used by data scientists and advanced analysts                                      | The data transformed is used by users reading report and SQL coders                   |
 | Creates ad hoc views.Low cost for building and maintaining                                                 | Views are created based on multiple scripts.Deleting view means deleting data         |
 | Best for unstructured and non-relational data. Ideal for data lakes. Suited for very large amounts of data | Best for relational and structured data. Better for small to medium amounts of data   |
+
+&nbsp;
+
+&nbsp;
+
+# ETL vs ELT
+
+| Feature                 | ETL (Extract → Transform → Load)          | ELT (Extract → Load → Transform)        |
+| ----------------------- | ----------------------------------------- | --------------------------------------- |
+| Where transform happens | Outside the warehouse (e.g., Spark, SSIS) | Inside the warehouse (e.g., dbt)        |
+| Order                   | Data is transformed before loading        | Data is loaded first, transformed later |
+| Tools                   | Informatica, Talend, SSIS, Spark          | Fivetran, Airbyte + dbt                 |
+| Performance             | Slower for large data                     | Faster, leverages warehouse compute     |
+| Scalability             | Often limited                             | Cloud-native scalability                |
