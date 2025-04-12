@@ -8,12 +8,11 @@
    > pip install dbt-snowflake
 4. check dbt version
    > dbt --version
-5. create a project (I name it dbt_project) and initialize it
+5. create a project (name it dbt_project) and initialize it
    > dbt init dbt_project
 6. go to the project
    > cd dbt_project
 7. check the path
-
    > pwd
 
 8. file explore > C drive > Users > chaitaly_kundu > .dbt > open profiles.yml in vs code. change the following things

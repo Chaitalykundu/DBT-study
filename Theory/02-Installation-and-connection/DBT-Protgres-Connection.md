@@ -10,7 +10,7 @@
    > pip install dbt-postgres
 4. check dbt version
    > dbt --version
-5. create a project (I name it dbt_project) and initialize it
+5. create a project ( name it dbt_project) and initialize it
    > dbt init dbt_project
 6. go to the project
    > cd dbt_project

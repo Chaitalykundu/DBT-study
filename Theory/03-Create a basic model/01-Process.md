@@ -62,7 +62,7 @@ WHERE email IS NOT NULL;
 
 ### 4. Add a source or seed
 
-If and reference or source table doesn’t exist, you can create a basic `seed` or another model to simulate it.
+If any reference or source table doesn’t exist, you can create a basic `seed` or another model to simulate it.
 
 Create a CSV file for seed in `raw_customers.csv` in `seeds` folder:
 
