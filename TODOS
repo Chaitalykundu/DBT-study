@@ -4,7 +4,7 @@ Week 1: Foundations:
  ✔ Connect dbt to your data warehouse (Snowflake, BigQuery, etc.) @done(25-04-12 11:47)
  ✔ Initialize a dbt project (dbt init) @done(25-04-12 12:02)
  ✔ Create a basic model (e.g., SELECT * FROM my_table) @done(25-04-12 14:24)
- - Run your first dbt run
+ ✔ Run your first dbt run @done(25-04-12 16:57)
 
 Week 2: Core Concepts:
  - Learn about ref() and model dependencies

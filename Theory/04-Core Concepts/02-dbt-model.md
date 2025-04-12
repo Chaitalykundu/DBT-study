@@ -14,7 +14,7 @@
 - [Model Dependencies](#model-dependencies)
 - [Adding Tests to a Model](#adding-tests-to-a-model)
 - [Documenting a Model](#documenting-a-model)
-    - [Run:](#run)
+    - [Run](#run)
 
 &nbsp;
 
@@ -196,7 +196,7 @@ You can also add docs in `schema.yml`:
 
 &nbsp;
 
-### Run:
+### Run
 
 ```bash
 dbt docs generate

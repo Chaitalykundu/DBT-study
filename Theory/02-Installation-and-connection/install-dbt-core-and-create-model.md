@@ -21,6 +21,9 @@
 - [Step 15: run the seed file](#step-15-run-the-seed-file)
 - [Step 16: Run the model](#step-16-run-the-model)
 - [Step 17: Check the output](#step-17-check-the-output)
+- [Step 18: Adding Tests to a Model](#step-18-adding-tests-to-a-model)
+- [Step 19: Documenting a Model](#step-19-documenting-a-model)
+  - [Run](#run)
 
 &nbsp;
 
@@ -265,8 +268,55 @@ dbt run
 This creates a table/view in your data warehouse under the configured schema, like details.customers.
 
 &nbsp;
+
 &nbsp;
+
+# Step 18: Adding Tests to a Model
+
+In the same folder (e.g. models/staging/), create `schema.yml`:
+
+```yaml
+version: 2
+
+models:
+  - name: stg_customers
+    description: "Staging model for customers"
+    columns:
+      - name: id
+        tests:
+          - not_null
+          - unique
+      - name: email
+        tests:
+          - not_null
+```
+
 &nbsp;
+
 &nbsp;
+
+# Step 19: Documenting a Model
+
+You can also add docs in `schema.yml`:
+
+```yaml
+- name: customer_mart
+  description: "Final mart table for customer reporting."
+```
+
 &nbsp;
+
+### Run
+
+```bash
+dbt docs generate
+dbt docs serve
+```
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
 &nbsp;
