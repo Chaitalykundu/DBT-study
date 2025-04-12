@@ -1,9 +1,9 @@
 Week 1: Foundations:
  - Understand what dbt is and its role in the modern data stack (ELT vs ETL)
  ✔ Install dbt-core or create a dbt Cloud account @done(25-04-11 13:55)
- - Connect dbt to your data warehouse (Snowflake, BigQuery, etc.)
- - Initialize a dbt project (dbt init)
- - Create a basic model (e.g., SELECT * FROM my_table)
+ ✔ Connect dbt to your data warehouse (Snowflake, BigQuery, etc.) @done(25-04-12 11:47)
+ ✔ Initialize a dbt project (dbt init) @done(25-04-12 12:02)
+ ✔ Create a basic model (e.g., SELECT * FROM my_table) @done(25-04-12 14:24)
  - Run your first dbt run
 
 Week 2: Core Concepts:
