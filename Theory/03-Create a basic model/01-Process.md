@@ -104,6 +104,14 @@ dbt run
 
 &nbsp;
 
+Run a single file
+
+```bash
+dbt run --select <file_name>
+```
+
+&nbsp;
+
 ### 7. Check the output
 
 This creates a table/view in your data warehouse under the configured schema, like `details.customers`.

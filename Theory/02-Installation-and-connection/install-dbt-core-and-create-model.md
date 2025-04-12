@@ -261,6 +261,14 @@ dbt run
 
 &nbsp;
 
+Run a single file
+
+```bash
+dbt run --select <file_name>
+```
+
+&nbsp;
+
 &nbsp;
 
 # Step 17: Check the output
