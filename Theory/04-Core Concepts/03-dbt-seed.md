@@ -25,12 +25,12 @@
 
 # Summary
 
-| Command                   | Description                               |
-| ------------------------- | ----------------------------------------- |
-| dbt seed                  | Loads CSVs into warehouse as tables       |
-| {{ ref('raw_customer') }} | References the seeded table               |
-| dbt seed --full-refresh   | Recreates the seed tables from fresh CSVs |
-|                           |                                           |
+| Command                     | Description                               |
+| --------------------------- | ----------------------------------------- |
+| dbt seed                    | Loads CSVs into warehouse as tables       |
+| {{ ref('seed_file_name') }} | References the seeded table               |
+| dbt seed --full-refresh     | Recreates the seed tables from fresh CSVs |
+|                             |                                           |
 
 &nbsp;
 
