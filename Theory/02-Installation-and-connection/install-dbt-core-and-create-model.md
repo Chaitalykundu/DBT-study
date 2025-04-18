@@ -4,11 +4,11 @@
 - [Install dbt-core or create a dbt Cloud account](#install-dbt-core-or-create-a-dbt-cloud-account)
 - [Step 1 : Install Python (if not already installed)](#step-1--install-python-if-not-already-installed)
 - [Step 2 : Install virtual environment](#step-2--install-virtual-environment)
-  - [create virtual environment using the following command](#create-virtual-environment-using-the-following-command)
-  - [to activate virtual environment](#to-activate-virtual-environment)
+    - [create virtual environment using the following command](#create-virtual-environment-using-the-following-command)
+    - [to activate virtual environment](#to-activate-virtual-environment)
 - [Step 3: Install dbt-core with an adapter](#step-3-install-dbt-core-with-an-adapter)
 - [Step 4: Verify installation](#step-4-verify-installation)
-- [Step 5: create a project (I name it dbt_project) and initialize it](#step-5-create-a-project-i-name-it-dbt_project-and-initialize-it)
+- [Step 5: create a project (name it dbt\_project) and initialize it](#step-5-create-a-project-name-it-dbt_project-and-initialize-it)
 - [Step 6: go to the project](#step-6-go-to-the-project)
 - [Step 7: check the path](#step-7-check-the-path)
 - [Step 8: change `profiles.yml`](#step-8-change-profilesyml)
@@ -23,7 +23,7 @@
 - [Step 17: Check the output](#step-17-check-the-output)
 - [Step 18: Adding Tests to a Model](#step-18-adding-tests-to-a-model)
 - [Step 19: Documenting a Model](#step-19-documenting-a-model)
-  - [Run](#run)
+    - [Run](#run)
 
 &nbsp;
 
@@ -128,10 +128,10 @@ dbt --version
 
 &nbsp;
 
-# Step 5: create a project (I name it dbt_project) and initialize it
+# Step 5: create a project (name it dbt_project) and initialize it
 
 ```bash
-   dbt init dbt_project
+dbt init dbt_project
 ```
 
 &nbsp;
@@ -141,7 +141,7 @@ dbt --version
 # Step 6: go to the project
 
 ```bash
-F cd dbt_project
+cd dbt_project
 ```
 
 &nbsp;
@@ -169,7 +169,7 @@ Follow specific file to change `profiles.yml`
 # Step 9: check all versions and configurations
 
 ```bash
-   > dbt debug
+dbt debug
 ```
 
 &nbsp;
@@ -179,7 +179,7 @@ Follow specific file to change `profiles.yml`
 # Step 10: Run DBT project
 
 ```bash
-    > dbt run
+dbt run
 ```
 
 &nbsp;
