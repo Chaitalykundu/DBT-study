@@ -3,17 +3,17 @@
 - [Overview](#overview)
 - [Introduction](#introduction)
 - [Steps to create a basic model](#steps-to-create-a-basic-model)
-    - [1. Navigate to your dbt project folder](#1-navigate-to-your-dbt-project-folder)
-    - [2. Go to the models directory](#2-go-to-the-models-directory)
-    - [3. Create a model file](#3-create-a-model-file)
-    - [4. Add a source or seed](#4-add-a-source-or-seed)
-    - [5. Add this seed to `dbt_project.yml`](#5-add-this-seed-to-dbt_projectyml)
-    - [6. run the seed file](#6-run-the-seed-file)
-    - [6. Run the model](#6-run-the-model)
-    - [7. Check the output](#7-check-the-output)
-- [Step 18: Adding Tests to a Model](#step-18-adding-tests-to-a-model)
-- [Step 19: Documenting a Model](#step-19-documenting-a-model)
-    - [Run](#run)
+  - [1. Navigate to your dbt project folder](#1-navigate-to-your-dbt-project-folder)
+  - [2. Go to the models directory](#2-go-to-the-models-directory)
+  - [3. Create a model file](#3-create-a-model-file)
+  - [4. Add a source or seed](#4-add-a-source-or-seed)
+  - [5. Add this seed to `dbt_project.yml`](#5-add-this-seed-to-dbt_projectyml)
+  - [6. run the seed file](#6-run-the-seed-file)
+  - [6. Run the model](#6-run-the-model)
+  - [7. Check the output](#7-check-the-output)
+- [Adding Tests to a Model](#adding-tests-to-a-model)
+- [Documenting a Model](#documenting-a-model)
+  - [Run](#run)
 
 &nbsp;
 
@@ -120,7 +120,7 @@ This creates a table/view in your data warehouse under the configured schema, li
 
 &nbsp;
 
-# Step 18: Adding Tests to a Model
+# Adding Tests to a Model
 
 In the same folder (e.g. models/staging/), create `schema.yml`:
 
@@ -144,7 +144,7 @@ models:
 
 &nbsp;
 
-# Step 19: Documenting a Model
+# Documenting a Model
 
 You can also add docs in `schema.yml`:
 

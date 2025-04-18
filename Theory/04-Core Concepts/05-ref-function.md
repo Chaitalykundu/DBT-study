@@ -5,7 +5,7 @@
 - [ref() function](#ref-function)
 - [Syntax](#syntax)
 - [Example](#example)
-    - [Explanation](#explanation)
+  - [Explanation](#explanation)
 - [Purpose](#purpose)
 - [What does ref() do?](#what-does-ref-do)
 - [Where You Can Use ref():](#where-you-can-use-ref)

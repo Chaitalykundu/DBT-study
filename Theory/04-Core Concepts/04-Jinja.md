@@ -71,6 +71,7 @@ SELECT * FROM {{ ref('stg_customers') }}
 &nbsp;
 
 ## Config Block
+
 Used to set materializations, tags, etc.
 
 ```sql

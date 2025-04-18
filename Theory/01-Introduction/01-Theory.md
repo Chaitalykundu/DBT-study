@@ -6,6 +6,7 @@
 - [DBT](#dbt)
 - [Why DBT](#why-dbt)
 - [Role of dbt in the Modern Data Stack](#role-of-dbt-in-the-modern-data-stack)
+- [Where dbt fits in the Modern Data Stack](#where-dbt-fits-in-the-modern-data-stack)
 - [What does dbt do?](#what-does-dbt-do)
 - [How does dbt work?](#how-does-dbt-work)
 - [Example Workflow](#example-workflow)
@@ -83,13 +84,54 @@ The **extraction** of data from source and **loading** raw data into data wareho
 
 In a modern data stack, data generally flows like this:
 
-- **Data Ingestion** — Tools like Fivetran, Airbyte, or custom scripts load raw data into your warehouse.
+- **Data Ingestion** — Tools like **Fivetran**, **Airbyte**, or **custom scripts** load raw data into your warehouse.
 
-- **Data Storage** — Cloud data warehouses like Snowflake, BigQuery, Redshift, or Databricks store the raw data.
+- **Data Storage** — Cloud data warehouses like **Snowflake**, **BigQuery**, **Redshift**, or **Databricks** store the raw data.
 
-- **Data Transformation** — This is where dbt comes in. It transforms raw data into clean, tested, documented datasets.
+- **Data Transformation** — This is where **dbt** comes in. It transforms raw data into clean, tested, documented datasets.
 
-- **BI / Analytics Layer** — Tools like Looker, Tableau, or Power BI use transformed data to generate dashboards and insights.
+- **BI / Analytics Layer** — Tools like **Looker**, **Tableau**, or **Power BI** use transformed data to generate dashboards and insights.
+
+&nbsp;
+
+| Task                         | Done by dbt?                   | Description                               |
+| ---------------------------- | ------------------------------ | ----------------------------------------- |
+| Extract from source          | ❌                             | Done by tools like Fivetran, Airbyte      |
+| Load to warehouse            | ❌                             | Done by EL tools or pipelines             |
+| Transform data (clean, join) | ✅                             | dbt writes SQL models to do this          |
+| Test data                    | ✅                             | dbt can test for nulls, duplicates, etc.  |
+| Document data                | ✅                             | dbt generates docs and lineage            |
+| Schedule transformation      | ✅ (with dbt Cloud or Airflow) | Automate dbt runs                         |
+| Serve data to dashboards     | ❌                             | That’s for BI tools like Tableau/Power BI |
+|                              |                                |                                           |
+
+&nbsp;
+
+&nbsp;
+
+# Where dbt fits in the Modern Data Stack
+
+```text
+                ┌────────────┐
+                │  Source DB │ ← Your app or external data
+                └─────┬──────┘
+                      │
+         ┌────────────▼────────────┐
+         │       EL (e.g. Fivetran)│ ← Extract + Load
+         └────────────┬────────────┘
+                      │
+             ┌────────▼────────┐
+             │  Data Warehouse │ ← BigQuery, Snowflake, Redshift, etc.
+             └────────┬────────┘
+                      │
+              ┌───────▼───────┐
+              │     dbt       │ ← Transforms raw data into models
+              └───────┬───────┘
+                      │
+            ┌─────────▼─────────┐
+            │  Analytics Tools  │ ← Looker, Power BI, Tableau, etc.
+            └───────────────────┘
+```
 
 &nbsp;
 
@@ -99,9 +141,9 @@ In a modern data stack, data generally flows like this:
 
 dbt lets you:
 
-- Write SQL to transform raw data into clean, usable datasets.
+- Write SQL to **transform raw data** into clean, usable datasets.
 - Organize SQL transformations like code (modular, reusable).
-- Test and document your data pipelines.
+- **Test and document** your data pipelines.
 - Version control your transformations (using Git).
 - Automatically manage dependencies between data models.
 

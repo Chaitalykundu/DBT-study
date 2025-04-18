@@ -4,26 +4,26 @@
 - [Install dbt-core or create a dbt Cloud account](#install-dbt-core-or-create-a-dbt-cloud-account)
 - [Step 1 : Install Python (if not already installed)](#step-1--install-python-if-not-already-installed)
 - [Step 2 : Install virtual environment](#step-2--install-virtual-environment)
-    - [create virtual environment using the following command](#create-virtual-environment-using-the-following-command)
-    - [to activate virtual environment](#to-activate-virtual-environment)
+  - [create virtual environment using the following command](#create-virtual-environment-using-the-following-command)
+  - [to activate virtual environment](#to-activate-virtual-environment)
 - [Step 3: Install dbt-core with an adapter](#step-3-install-dbt-core-with-an-adapter)
 - [Step 4: Verify installation](#step-4-verify-installation)
-- [Step 5: create a project (name it dbt\_project) and initialize it](#step-5-create-a-project-name-it-dbt_project-and-initialize-it)
+- [Step 5: create a project (name it dbt_project) and initialize it](#step-5-create-a-project-name-it-dbt_project-and-initialize-it)
 - [Step 6: go to the project](#step-6-go-to-the-project)
 - [Step 7: check the path](#step-7-check-the-path)
 - [Step 8: change `profiles.yml`](#step-8-change-profilesyml)
 - [Step 9: check all versions and configurations](#step-9-check-all-versions-and-configurations)
 - [Step 10: Run DBT project](#step-10-run-dbt-project)
-- [Step 11: Go to the models directory](#step-11-go-to-the-models-directory)
-- [Step 12: Create a model file](#step-12-create-a-model-file)
-- [Step 13: Add a source or seed](#step-13-add-a-source-or-seed)
-- [Step 14: Add this seed to `dbt_project.yml`](#step-14-add-this-seed-to-dbt_projectyml)
-- [Step 15: run the seed file](#step-15-run-the-seed-file)
+- [Step 11: Add a source or seed](#step-11-add-a-source-or-seed)
+- [Step 12: Add this seed to `dbt_project.yml`](#step-12-add-this-seed-to-dbt_projectyml)
+- [Step 13: run the seed file](#step-13-run-the-seed-file)
+- [Step 14: Go to the models directory](#step-14-go-to-the-models-directory)
+- [Step 15: Create a model file](#step-15-create-a-model-file)
 - [Step 16: Run the model](#step-16-run-the-model)
 - [Step 17: Check the output](#step-17-check-the-output)
 - [Step 18: Adding Tests to a Model](#step-18-adding-tests-to-a-model)
 - [Step 19: Documenting a Model](#step-19-documenting-a-model)
-    - [Run](#run)
+  - [Run](#run)
 
 &nbsp;
 
@@ -186,35 +186,7 @@ dbt run
 
 &nbsp;
 
-# Step 11: Go to the models directory
-
-models live in the `/models` folder
-
-&nbsp;
-
-&nbsp;
-
-# Step 12: Create a model file
-
-For example, create a file named `customers.sql`:
-
-```sql
--- models/customers.sql
-SELECT
-  id,
-  first_name,
-  last_name,
-  email,
-  created_at
-FROM {{ ref('raw_customers') }}
-WHERE email IS NOT NULL;
-```
-
-&nbsp;
-
-&nbsp;
-
-# Step 13: Add a source or seed
+# Step 11: Add a source or seed
 
 If any reference or source table doesn’t exist, you can create a basic `seed` or another model to simulate it.
 
@@ -230,7 +202,7 @@ id,first_name,last_name,email,created_at
 
 &nbsp;
 
-# Step 14: Add this seed to `dbt_project.yml`
+# Step 12: Add this seed to `dbt_project.yml`
 
 ```yml
 seeds:
@@ -243,10 +215,38 @@ seeds:
 
 &nbsp;
 
-# Step 15: run the seed file
+# Step 13: run the seed file
 
 ```bash
 dbt seed
+```
+
+&nbsp;
+
+&nbsp;
+
+# Step 14: Go to the models directory
+
+models live in the `/models` folder
+
+&nbsp;
+
+&nbsp;
+
+# Step 15: Create a model file
+
+For example, create a file named `customers.sql`:
+
+```sql
+-- models/customers.sql
+SELECT
+  id,
+  first_name,
+  last_name,
+  email,
+  created_at
+FROM {{ ref('raw_customers') }}
+WHERE email IS NOT NULL;
 ```
 
 &nbsp;

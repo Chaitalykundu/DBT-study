@@ -203,6 +203,7 @@ dbt run && dbt test
 &nbsp;
 
 ## 10. CI/CD & Version Control
+
 Use Git to manage code.
 
 Set up CI pipelines (e.g., GitHub Actions) to auto-run dbt jobs on pull requests.

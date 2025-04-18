@@ -13,6 +13,7 @@
 6. go to the project
    > cd dbt_project
 7. check the path
+
    > pwd
 
 8. file explore > C drive > Users > chaitaly_kundu > .dbt > open profiles.yml in vs code. change the following things

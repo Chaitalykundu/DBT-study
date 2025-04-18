@@ -1,5 +1,5 @@
 Week 1: Foundations:
- - Understand what dbt is and its role in the modern data stack (ELT vs ETL)
+ ✔ Understand what dbt is and its role in the modern data stack (ELT vs ETL) @done(25-04-19 01:05)
  ✔ Install dbt-core or create a dbt Cloud account @done(25-04-11 13:55)
  ✔ Connect dbt to your data warehouse (Snowflake, BigQuery, etc.) @done(25-04-12 11:47)
  ✔ Initialize a dbt project (dbt init) @done(25-04-12 12:02)
