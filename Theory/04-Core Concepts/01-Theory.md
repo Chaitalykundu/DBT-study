@@ -2,15 +2,21 @@
 
 - [Overview](#overview)
 - [Models](#models)
+  - [Example](#example)
 - [Jinja + SQL (Templating)](#jinja--sql-templating)
+  - [Example](#example-1)
 - [ref() Function](#ref-function)
 - [Materializations](#materializations)
 - [Sources](#sources)
-- [Tests](#tests)
-- [Documentation](#documentation)
+  - [Example](#example-2)
 - [Seeds](#seeds)
+- [Tests](#tests)
+  - [Example](#example-3)
+- [Documentation](#documentation)
+  - [Commands](#commands)
 - [Snapshots](#snapshots)
 - [Macros](#macros)
+- [Configurations](#configurations)
 - [Typical dbt Workflow](#typical-dbt-workflow)
 
 &nbsp;
@@ -21,16 +27,22 @@
 
 # Models
 
-- **What**: SQL files that define a transformation step (like a SELECT query).
+- **What**: SQL files that define a transformation step (like a `SELECT` query).
 
 - **Stored as**: `.sql` files in the `models/` folder.
 
-- Example:
+- dbt turns these into materialized views or tables in your data warehouse
 
-  ```sql
-  -- models/stg_customers.sql
-  SELECT id, name, email FROM raw.customers;
-  ```
+&nbsp;
+
+## Example
+
+```sql
+-- models/stg_customers.sql
+SELECT id, name, email FROM rawcustomers;
+```
+
+&nbsp;
 
 - **Run with**: `dbt run`
   This compiles the SQL and runs it on your warehouse (like Snowflake, BigQuery, etc.).
@@ -45,11 +57,13 @@
 
 - You can reuse code, add logic, or dynamically reference models.
 
-- Example:
+&nbsp;
 
-  ```sql
-  SELECT * FROM {{ ref('stg_customers') }}
-  ```
+## Example
+
+```sql
+SELECT * FROM {{ ref('stg_customers') }}
+```
 
 &nbsp;
 
@@ -70,12 +84,13 @@
 
 # Materializations
 
-- Determines how dbt builds a model in your warehouse:
+- Determines how dbt builds a model in your warehouse.
 
+- Types:
   - **view** (default): a simple SQL view
   - **table**: persists data as a table
   - **incremental**: only new/changed data is processed
-  - **ephemeral**: temporary models for use in other models (not materialized)
+  - **ephemeral**: temporary models for use in other models (no object created in warehouse)
 
 &nbsp;
 
@@ -83,16 +98,29 @@
 
 # Sources
 
-- Declare raw tables as sources, so they are trackable and testable.
+- Define external/raw data that dbt models depend on.
 
-- Example:
+- Helps in data lineage and testing.
 
-  ```yaml
-  sources:
-    - name: raw
-      tables:
-        - name: customers
-  ```
+&nbsp;
+
+## Example
+
+```yaml
+sources:
+  - name: raw
+    tables:
+      - name: customers
+```
+
+&nbsp;
+
+&nbsp;
+
+# Seeds
+
+- Static CSV files loaded into your warehouse as tables.
+- Useful for lookups, mappings, or test data.
 
 &nbsp;
 
@@ -108,16 +136,18 @@
 
 - Custom tests also possible in SQL.
 
-- Example:
+&nbsp;
 
-  ```yaml
-  - name: stg_customers
-    columns:
-      - name: id
-        tests:
-          - not_null
-          - unique
-  ```
+## Example
+
+```yaml
+- name: stg_customers
+  columns:
+    - name: id
+      tests:
+        - not_null
+        - unique
+```
 
 &nbsp;
 
@@ -125,23 +155,17 @@
 
 # Documentation
 
-- Auto-generate documentation using:
-
-  ```bash
-  dbt docs generate
-  dbt docs serve
-  ```
-
+- Auto-generate documentation.
 - You get lineage graphs, model descriptions, and test coverage.
 
 &nbsp;
 
-&nbsp;
+## Commands
 
-# Seeds
-
-- Static CSV files loaded into your warehouse as tables.
-- Useful for lookups, mappings, or test data.
+```bash
+dbt docs generate
+dbt docs serve
+```
 
 &nbsp;
 
@@ -149,7 +173,8 @@
 
 # Snapshots
 
-- Capture slowly changing dimensions (SCDs).
+- Capture **slowly changing dimensions** (SCDs).
+- Tracks changes in your data over time.
 - Useful when source data changes but you want to keep history.
 
 &nbsp;
@@ -160,6 +185,18 @@
 
 - Reusable SQL snippets/functions using Jinja.
 - Define once, use many times.
+
+&nbsp;
+
+&nbsp;
+
+# Configurations
+
+You can configure models with metadata like:
+
+```sql
+{{ config(materialized='table') }}
+```
 
 &nbsp;
 
