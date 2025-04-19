@@ -72,6 +72,14 @@ dbt seed
 
 &nbsp;
 
+To run only one seed file
+
+```bash
+dbt seed --select seed_file_name
+```
+
+&nbsp;
+
 &nbsp;
 
 ### 8. Check the output

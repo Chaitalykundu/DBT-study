@@ -6,6 +6,8 @@
 - [`dbt seed` is great for](#dbt-seed-is-great-for)
 - [Seed file example](#seed-file-example)
 - [Run dbt seed](#run-dbt-seed)
+  - [Command](#command)
+  - [Explanation](#explanation)
 - [Where to place seed files](#where-to-place-seed-files)
 - [Optional flags for dbt seed](#optional-flags-for-dbt-seed)
   - [Example](#example)
@@ -65,6 +67,24 @@ id,first_name,last_name,email,created_at
 &nbsp;
 
 # Run dbt seed
+
+## Command
+
+```bash
+dbt seed
+```
+
+&nbsp;
+
+To run only one seed file
+
+```bash
+dbt seed --select seed_file_name
+```
+
+&nbsp;
+
+## Explanation
 
 When you run `dbt seed`, This will:
 

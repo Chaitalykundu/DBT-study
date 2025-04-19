@@ -6,6 +6,7 @@
 - [Basic Example](#basic-example)
     - [Explanation](#explanation)
 - [Run dbt model](#run-dbt-model)
+  - [Explanation](#explanation-1)
 - [dbt handles](#dbt-handles)
 - [Model Directory Structure Example](#model-directory-structure-example)
 - [Model Dependencies](#model-dependencies)
@@ -73,6 +74,22 @@ WHERE is_active = TRUE;
 
 # Run dbt model
 
+```bash
+dbt run
+```
+
+&nbsp;
+
+To run only one model
+
+```bash
+dbt run --select file_name
+```
+
+&nbsp;
+
+## Explanation
+
 When you run `dbt run`, dbt:
 
 - Compiles the SQL (with Jinja templating),
@@ -137,6 +154,7 @@ dbt figures out the correct order automatically.
 | Break logic into layers | For better modularity (e.g., staging/, marts/).  |
 | Use meaningful names    | Helps in traceability and understanding.         |
 | Keep logic readable     | Split into CTEs or ephemeral models when needed. |
+|                         |                                                  |
 
 &nbsp;
 

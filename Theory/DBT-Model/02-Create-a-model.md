@@ -72,6 +72,14 @@ dbt seed
 
 &nbsp;
 
+Run a single seed file
+
+```bash
+dbt seed --select <seed_file_name>
+```
+
+&nbsp;
+
 ### 5. Go to the models directory
 
 models live in the `/models` folder
