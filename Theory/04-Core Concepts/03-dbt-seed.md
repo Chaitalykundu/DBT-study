@@ -6,6 +6,7 @@
 - [`dbt seed` is great for](#dbt-seed-is-great-for)
 - [How to Use dbt seed](#how-to-use-dbt-seed)
   - [Step 1: Place your CSV file in the `seeds/` directory](#step-1-place-your-csv-file-in-the-seeds-directory)
+    - [Seed file example](#seed-file-example)
   - [Step 2: Run the seed command](#step-2-run-the-seed-command)
     - [Explanation](#explanation)
   - [Step 3: Reference the Seed Table in Models](#step-3-reference-the-seed-table-in-models)
@@ -69,7 +70,7 @@
 
 `raw_customers.csv`
 
-```
+```text
 dbt_project/
 ├── seeds/
 │   └── raw_customer.csv
@@ -78,6 +79,8 @@ dbt_project/
 &nbsp;
 
 &nbsp;
+
+### Seed file example
 
 ```csv
 id,first_name,last_name,email,created_at
@@ -102,6 +105,7 @@ dbt seed
 
 This will:
 
+- Read all `.csv` files in the /seeds folder
 - Upload the CSV to your data warehouse
 - Create a table with the same name as the file (e.g., `raw_customers`)
 
@@ -124,11 +128,15 @@ SELECT * FROM {{ ref('raw_customers') }}
 
 ```yml
 seeds:
-  my_project: # your project name
-    raw_customers: # seed configuration block
-      file: raw_customers.csv
+  my_project: # project name
+    +schema: staging # Optional: schema to load the seeds into
+    +quote_columns: true # Optional: quote column names (good for case-sensitive warehouses)
+    seed_file_name: # seed configuration block
       header: true
       quote_columns: true
+    +column_types:
+      col_name_1: datatype
+      col_name_2: datatype
 ```
 
 &nbsp;

@@ -1,7 +1,7 @@
 # Overview
 
 - [Overview](#overview)
-- [Summary: Key Points about dbt Models](#summary-key-points-about-dbt-models)
+- [Summary](#summary)
 - [DBT Model](#dbt-model)
 - [Basic Example](#basic-example)
     - [Explanation](#explanation)
@@ -18,7 +18,7 @@
 
 &nbsp;
 
-# Summary: Key Points about dbt Models
+# Summary
 
 | Feature          | Purpose                       |
 | ---------------- | ----------------------------- |
@@ -65,7 +65,6 @@ WHERE is_active = TRUE;
 ### Explanation
 
 - Selects from another model called `raw_customers` using `ref()`
-
 - Applies a filter to show only active customers
 
 &nbsp;

@@ -1,7 +1,7 @@
 # Overview
 
 - [Overview](#overview)
-- [Sample dbt\_project.yml File](#sample-dbt_projectyml-file)
+- [Sample dbt_project.yml File](#sample-dbt_projectyml-file)
 - [Key Fields Explained](#key-fields-explained)
 - [Enable quoting of schema/table names:](#enable-quoting-of-schematable-names)
 
@@ -44,13 +44,13 @@ models:
 
 # 🌱 How seeds behave
 seeds:
-  my_dbt_project:     # 👈 Must match the `name:` at the top
-    +schema: staging  # Optional: schema to load the seeds into
-    +quote_columns: true  # Optional: quote column names (good for case-sensitive warehouses)
+  my_dbt_project: # 👈 Must match the `name:` at the top
+    +schema: staging # Optional: schema to load the seeds into
+    +quote_columns: true # Optional: quote column names (good for case-sensitive warehouses)
     seed_file_name:
       +column_types:
         col_name_1: datatype
-        col_name_1: datatype
+        col_name_2: datatype
 ```
 
 &nbsp;
